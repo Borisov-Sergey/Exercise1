@@ -22,15 +22,24 @@ public class UserServiceImpl implements UserService {
     }
 
     public void dropUsersTable() {
-        userDao.dropUsersTable();
+        try {
+            userDao.dropUsersTable();
+        } catch (SQLException e) {
+        }
     }
 
     public void saveUser(String name, String lastName, byte age) {
-        userDao.saveUser(name, lastName, age);
+        try {
+            userDao.saveUser(name, lastName, age);
+        } catch (SQLException e) {
+        }
     }
 
     public void removeUserById(long id) {
-        userDao.removeUserById(id);
+        try {
+            userDao.removeUserById(id);
+        } catch (SQLException e) {
+        }
     }
 
     public List<User> getAllUsers() {
